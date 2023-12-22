@@ -492,13 +492,73 @@
           <p class="modal-title">
             Leave your contacts and we will call you back
           </p>
-          <form action="">
-            <label for="">Name<input type="text" /></label>
-            <label for="">Phone<input type="text" /></label>
-            <label for="">Email<input type="text" /></label>
-            <label for="">Comment<input type="text" /></label>
-            <label for=""><input type="text" /></label>
-            <button type="submit"></button>
+          <form class="modal-form" name="modal">
+            <div class="form-wraper">
+              <label class="form-label" for="name">Name</label>
+              <div class="form-field">
+                <input
+                  class="form-input"
+                  type="text"
+                  name="mod-form"
+                  id="name"
+                />
+                <svg class="form-icon" width="18" height="24">
+                  <use href="./images/icons.svg#icon-person"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="form-wraper">
+              <label class="form-label" for="tel">Phone</label>
+              <div class="form-field">
+                <input class="form-input" type="tel" name="mod-form" id="tel" />
+                <svg class="form-icon" width="18" height="24">
+                  <use href="./images/icons.svg#icon-phone"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="form-wraper">
+              <label class="form-label" for="email">Email</label>
+              <div class="form-field">
+                <input
+                  class="form-input"
+                  type="email"
+                  name="mod-form"
+                  id="email"
+                />
+                <svg class="form-icon" width="18" height="24">
+                  <use href="./images/icons.svg#icon-email"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="form-wraper">
+              <label class="form-label" for="comment">Comment</label>
+            </div>
+            <div class="form-field">
+              <textarea
+                class="form-comment"
+                type="text"
+                rows="7"
+                id="comment"
+                name="mod-form"
+                placeholder="Text input"
+              ></textarea>
+            </div>
+            <label class="form-agreement">
+              <input
+                class="checkbox visually-hidden"
+                type="checkbox"
+                name="user-agreemen"
+                value="false"
+              />
+              <span class="form-agreement-checkbox">
+                <svg class="form-agreement-icon" width="16" height="16">
+                  <use href="./images/icons.svg#icon-Checkbox"></use>
+                </svg>
+              </span>
+              I accept the terms and conditions of the
+              <a class="form-agreement-link" href="">Privacy Policy</a>
+            </label>
+            <button class="submit-btn" type="submit">Send</button>
           </form>
         </div>
       </div>
