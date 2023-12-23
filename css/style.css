@@ -641,6 +641,10 @@ main {
   outline: transparent;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.form-input:hover,
+.form-input:focus {
+  border-color: #404bbf;
+}
 .form-icon {
   fill: #2e2f42;
   position: absolute;
@@ -649,7 +653,10 @@ main {
   transform: translateY(-50%);
   stroke: #404040;
 }
-
+.form-input:hover + .form-icon,
+.form-input:focus + .form-icon {
+  fill: #404bbf;
+}
 .form-comment {
   width: 100%;
   padding-left: 16px;
@@ -660,7 +667,10 @@ main {
   outline: transparent;
   resize: none;
 }
-
+.form-comment:hover,
+.form-comment:focus {
+  border-color: #404bbf;
+}
 .submit-btn {
   display: flex;
   justify-content: center;
@@ -715,8 +725,8 @@ main {
 .form-agreement-icon {
   opacity: 0;
   transform: scale(0.3);
-  transition: opacity 300ms cubic-bezier(0.8, 0, 0, 1.8) 150ms,
-    transform 300ms cubic-bezier(0.8, 0, 0, 1.8) 150ms;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 150ms,
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .checkbox:checked + .form-agreement-checkbox > .form-agreement-icon {
   opacity: 1;
