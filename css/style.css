@@ -579,10 +579,8 @@ main {
   background-color: rgba(46, 47, 66, 0.4);
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -593,31 +591,46 @@ main {
   pointer-events: inherit;
 }
 .modal {
-  max-width: 408px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 408px;
+  min-height: 584px;
   border-radius: 4px;
   background: #fcfcfc;
-  padding: 24px 24px;
+  padding: 72px 24px 24px 24px;
+  transform: translate(-50%, -50%) scale(1);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-btn {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 24px;
   height: 24px;
   border-radius: 50%;
   background-color: #e7e9fc;
-  border: 1px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  left: 910px;
-  margin-bottom: 8px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-btn:hover,
 .modal-btn:focus {
   background-color: #404bbf;
+  border: none;
+  fill: #ffffff;
 }
+
 .modal-btn-icon {
   fill: #2e2f42;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-title {
   color: #2e2f42;
@@ -631,16 +644,19 @@ main {
 }
 .modal-form {
 }
+.form-wraper {
+  margin-bottom: 8px;
+}
 .form-label {
   color: #8e8f99;
   font-size: 12px;
-  line-height: 1.16; /* 116.667% */
+  line-height: 1.17; /* 116.667% */
   letter-spacing: 0.04em;
   margin-bottom: 4px;
+  display: block;
 }
 .form-field {
   position: relative;
-  margin-bottom: 8px;
 }
 .form-input {
   width: 100%;
@@ -649,6 +665,7 @@ main {
   border-radius: 4px;
   border: 1px solid rgba(46, 47, 66, 0.4);
 
+  background-color: transparent;
   outline: transparent;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -663,16 +680,26 @@ main {
   left: 16px;
   transform: translateY(-50%);
   stroke: #404040;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form-input:hover + .form-icon,
 .form-input:focus + .form-icon {
   fill: #4d5ae5;
 }
+.form-wraper-com {
+  margin-bottom: 16px;
+}
 .form-comment {
   width: 100%;
-  padding-left: 16px;
+  height: 120px;
+  padding: 8px 16px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   border: 1px solid rgba(46, 47, 66, 0.4);
+  background-color: transparent;
   outline: transparent;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   outline: transparent;
@@ -694,8 +721,9 @@ main {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  background: #4d5ae5;
+  background-color: #4d5ae5;
   padding: 16px 32px;
+  font-family: "Roboto", sans-serif;
   border: none;
   border-radius: 4px;
   min-width: 169px;
@@ -710,13 +738,16 @@ main {
 }
 
 /* Custom checkbox */
+.div-agreement {
+  margin-bottom: 24px;
+}
 .form-agreement {
   display: block;
   margin-bottom: 24px;
 
   /* Small Text */
   font-size: 12px;
-  line-height: 1.16px; /* 116.667% */
+  line-height: 1.17px; /* 116.667% */
   letter-spacing: 0.04em;
   color: #8e8f99;
 
@@ -731,16 +762,22 @@ main {
   width: 16px;
   height: 16px;
 
-  border-radius: 4px;
+  border-radius: 2px;
   border: 1px solid rgba(46, 47, 66, 0.4);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   margin-right: 8px;
+  fill: transparent;
 }
 .checkbox:checked + .form-agreement-checkbox {
   background-color: #404bbf;
   border-color: transparent;
+  border: none;
+  fill: #f4f4fd;
 }
+
 .checkbox:checked + .form-agreement-checkbox > .form-agreement-icon {
   opacity: 1;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);

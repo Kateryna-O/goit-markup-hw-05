@@ -496,18 +496,20 @@
               <use href="./images/icons.svg#icon-close"></use>
             </svg>
           </button>
-          <p class="modal-title">
-            Leave your contacts and we will call you back
-          </p>
+          <div>
+            <p class="modal-title">
+              Leave your contacts and we will call you back
+            </p>
+          </div>
           <form class="modal-form" name="modal">
             <div class="form-wraper">
-              <label class="form-label" for="name">Name</label>
+              <label class="form-label" for="user-name">Name</label>
               <div class="form-field">
                 <input
                   class="form-input"
                   type="text"
                   name="mod-form"
-                  id="name"
+                  id="user-name"
                 />
                 <svg class="form-icon" width="18" height="24">
                   <use href="./images/icons.svg#icon-person"></use>
@@ -515,55 +517,60 @@
               </div>
             </div>
             <div class="form-wraper">
-              <label class="form-label" for="tel">Phone</label>
+              <label class="form-label" for="user-tel">Phone</label>
               <div class="form-field">
-                <input class="form-input" type="tel" name="mod-form" id="tel" />
+                <input
+                  class="form-input"
+                  type="tel"
+                  name="mod-form"
+                  id="user-tel"
+                />
                 <svg class="form-icon" width="18" height="24">
                   <use href="./images/icons.svg#icon-phone"></use>
                 </svg>
               </div>
             </div>
             <div class="form-wraper">
-              <label class="form-label" for="email">Email</label>
+              <label class="form-label" for="user-email">Email</label>
               <div class="form-field">
                 <input
                   class="form-input"
                   type="email"
                   name="mod-form"
-                  id="email"
+                  id="user-email"
                 />
                 <svg class="form-icon" width="18" height="24">
                   <use href="./images/icons.svg#icon-email"></use>
                 </svg>
               </div>
             </div>
-            <div class="form-wraper">
-              <label class="form-label" for="comment">Comment</label>
+            <div class="form-wraper-com">
+              <label class="form-label" for="user-comment">Comment</label>
             </div>
-            <div class="form-field">
-              <textarea
-                class="form-comment"
-                rows="7"
-                id="comment"
-                name="mod-form"
-                placeholder="Text input"
-              ></textarea>
-            </div>
-            <label class="form-agreement">
+            <textarea
+              class="form-comment"
+              id="user-comment"
+              name="mod-form"
+              placeholder="Text input"
+            ></textarea>
+            <div class="div-agreement">
               <input
                 class="checkbox visually-hidden"
                 type="checkbox"
-                name="user-agreemen"
-                value="false"
+                name="user-privacy"
+                id="user-privacy"
+                value="true"
               />
-              <span class="form-agreement-checkbox">
-                <svg class="form-agreement-icon" width="10" height="10">
-                  <use href="./images/icons.svg#icon-Vector"></use>
-                </svg>
-              </span>
-              I accept the terms and conditions of the
-              <a class="form-agreement-link" href="">Privacy Policy</a>
-            </label>
+              <label class="form-agreement" for="user-privacy">
+                <span class="form-agreement-checkbox">
+                  <svg class="form-agreement-icon" width="10" height="8">
+                    <use href="./images/icons.svg#icon-Vector"></use>
+                  </svg>
+                </span>
+                I accept the terms and conditions of the
+                <a class="form-agreement-link" href="">Privacy Policy</a>
+              </label>
+            </div>
             <button class="submit-btn" type="submit">Send</button>
           </form>
         </div>
