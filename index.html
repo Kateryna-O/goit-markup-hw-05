@@ -468,15 +468,22 @@
             </ul>
           </div>
           <div class="subscribe">
-            <p class="sub-title">Subscribe</p>
             <form class="sub-form">
-              <input class="sub-email" type="email" placeholder="E-mail" />
-              <button class="sub-btn" type="submit">
-                <span class="btn-name">Subscribe</span>
-                <svg class="sub-svg" width="24" height="24">
-                  <use href="./images/icons.svg#icon-frame"></use>
-                </svg>
-              </button>
+              <label for="sub-email" class="sub-title"
+                >Subscribe
+                <input
+                  class="sub-email"
+                  name="sub-email"
+                  type="email"
+                  placeholder="E-mail"
+                />
+                <button class="sub-btn" type="submit">
+                  <span class="btn-name">Subscribe</span>
+                  <svg class="sub-svg" width="24" height="24">
+                    <use href="./images/icons.svg#icon-frame"></use>
+                  </svg>
+                </button>
+              </label>
             </form>
           </div>
         </div>
@@ -536,7 +543,6 @@
             <div class="form-field">
               <textarea
                 class="form-comment"
-                type="text"
                 rows="7"
                 id="comment"
                 name="mod-form"
